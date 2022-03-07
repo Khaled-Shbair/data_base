@@ -13,6 +13,8 @@ class DataBaseControl {
 
   DataBaseControl._();
 
+  Database get dataBase => _database;
+
   Future<void> initDatabase() async {
     Directory directory = await getApplicationDocumentsDirectory();
     String path = join(directory.path, 'database.sql');
