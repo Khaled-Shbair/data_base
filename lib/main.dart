@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'dataBase/DataBase_control.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DataBaseControl().initDatabase();
   runApp(const MyApp());
 }
 
