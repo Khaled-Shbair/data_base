@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Screen/lunch_Screen.dart';
 import 'dataBase/DataBase_control.dart';
 
 void main() async {
@@ -12,6 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return MaterialApp(
+      initialRoute: '/Lunch_Screen',
+      routes: {
+        '/Lunch_Screen': (context) => const LunchScreen(),
+        //    '/Login_Screen':(context)=>const LoginScreen(),
+        //  '/Register_Screen':(context)=>const RegisterScreen(),
+      },
+    );
   }
 }

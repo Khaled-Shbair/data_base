@@ -1,11 +1,22 @@
 import 'package:sqflite/sqflite.dart';
 
+import '../../Shared_preferences/shared_preferences.dart';
 import '../../models/users.dart';
 import '../DataBase_control.dart';
 import 'dataBase_operations.dart';
 
 class UsersDataBaseController implements DataBaseOperations<Users> {
   Database database = DataBaseControl().dataBase;
+
+  Future<bool> login({required String email, required String password}) async {
+    List<Map<String, dynamic>> maps = await database.query('Users',
+        where: 'email=? AND password=?', whereArgs: [email, password]);
+    if (maps.isNotEmpty) {
+      Users users = Users.fromMap(maps.first);
+      await SharedPreferencesController().save(users);
+    }
+    return maps.isNotEmpty;
+  }
 
   //Insert values in table
   @override
