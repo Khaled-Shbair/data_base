@@ -1,10 +1,13 @@
+import 'package:data_base/pref/shared_preference.dart';
 import 'package:flutter/material.dart';
-import 'Screen/lunch_Screen.dart';
-import 'dataBase/DataBase_control.dart';
+
+import 'Screen/home Screen.dart';
+import 'Screen/login Screen.dart';
+import 'Screen/lunch Screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DataBaseControl().initDatabase();
+  await SharedPrefController().initSharedPreferences();
   runApp(const MyApp());
 }
 
@@ -14,11 +17,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/Lunch_Screen',
+      initialRoute: '/LunchScreen',
       routes: {
-        '/Lunch_Screen': (context) => const LunchScreen(),
-        //    '/Login_Screen':(context)=>const LoginScreen(),
-        //  '/Register_Screen':(context)=>const RegisterScreen(),
+        '/LunchScreen': (context) => const LunchScreen(),
+        '/LoginScreen': (context) => const LoginScreen(),
+        '/HomeScreen': (context) => const HomeScreen(),
       },
     );
   }
