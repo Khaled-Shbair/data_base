@@ -1,5 +1,6 @@
 import 'package:data_base/pref/shared_preference.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LunchScreen extends StatefulWidget {
   const LunchScreen({Key? key}) : super(key: key);
@@ -34,9 +35,9 @@ class _LunchScreenState extends State<LunchScreen> {
             ],
           ),
         ),
-        child: const Text(
-          'App Name',
-          style: TextStyle(
+        child: Text(
+          AppLocalizations.of(context)!.appName,
+          style: const TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 24,

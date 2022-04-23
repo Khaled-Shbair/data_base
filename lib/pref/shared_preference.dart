@@ -4,13 +4,14 @@ enum prefKey { email, login }
 
 class SharedPrefController {
   static final SharedPrefController _instance = SharedPrefController._();
+
   late SharedPreferences _sharedPreferences;
+
+  SharedPrefController._();
 
   factory SharedPrefController() {
     return _instance;
   }
-
-  SharedPrefController._();
 
   Future<void> initSharedPreferences() async {
     _sharedPreferences = await SharedPreferences.getInstance();
@@ -34,7 +35,7 @@ class SharedPrefController {
     return false;
   }
 
-  Future<bool> clear() async {
+  Future<bool> cleared() async {
     return await _sharedPreferences.clear();
   }
 }

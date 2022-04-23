@@ -1,0 +1,15 @@
+{
+  "appName": "اسم التطبيق",
+  "login": "تسجيل الدخول",
+  "home": "الصفحة الرئيسية",
+  "logout": "تسجيل الخروج",
+  "areYorSure": "هل أنت متأكد",
+  "yes": "نعم",
+  "no": "لا",
+  "welcomeBack": "أهلا بعودتك...",
+  "enterEmailAndPassword": "أدخل البريد وكلمة المرور",
+  "email": "الإيميل",
+  "password": "كلمة السر",
+  "buttonLogin": "تسجيل الدخول",
+  "enterEmailPassword": "يرجى إدخال البريد أو كلمة المرور!"
+}

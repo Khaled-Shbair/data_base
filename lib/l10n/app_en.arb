@@ -1,0 +1,15 @@
+{
+  "appName": "App Name",
+  "login": "LOGIN",
+  "home": "HOME",
+  "logout": "Logout",
+  "areYorSure": "Are yor sure?",
+  "yes": "Yes",
+  "no": "No",
+  "welcomeBack": "Welcome back...",
+  "enterEmailAndPassword": "Enter email & password",
+  "email": "Email",
+  "password": "Password",
+  "buttonLogin": "Login",
+  "enterEmailPassword": "Enter email & password!"
+}

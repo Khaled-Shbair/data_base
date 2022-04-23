@@ -1,9 +1,9 @@
 import 'package:data_base/pref/shared_preference.dart';
 import 'package:flutter/material.dart';
-
 import 'Screen/home Screen.dart';
 import 'Screen/login Screen.dart';
 import 'Screen/lunch Screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale('en'),
       initialRoute: '/LunchScreen',
       routes: {
         '/LunchScreen': (context) => const LunchScreen(),
