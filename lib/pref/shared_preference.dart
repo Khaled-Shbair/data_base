@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-enum prefKey { email, login }
+enum prefKey { email, login, language }
 
 class SharedPrefController {
   static final SharedPrefController _instance = SharedPrefController._();
@@ -21,6 +21,13 @@ class SharedPrefController {
     await _sharedPreferences.setBool(prefKey.login.toString(), true);
     await _sharedPreferences.setString(prefKey.email.toString(), email);
   }
+
+  Future<bool> changeLanguage(String language) async {
+    return _sharedPreferences.setString(prefKey.language.toString(), language);
+  }
+
+  String get language =>
+      _sharedPreferences.getString(prefKey.language.toString()) ?? 'en';
 
   bool get login =>
       _sharedPreferences.getBool(prefKey.login.toString()) ?? false;

@@ -1,6 +1,8 @@
 import 'package:data_base/pref/shared_preference.dart';
+import 'package:data_base/provider/language_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -42,6 +44,12 @@ class _LoginScreenState extends State<LoginScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Provider.of<LanguageProvider>(context,listen: false).changeLanguage();
+        },
+        child: const Icon(Icons.language),
       ),
       body: ListView(
         padding: const EdgeInsetsDirectional.all(20),
